@@ -11,7 +11,7 @@ namespace Course_2_Algorithms_and_data_structures
     {
         static void Main(string[] args)
         {
-            SimpNum.TestCode();
-        }        
+            Utils.TaskChoiser();
+        }      
     }
 }
