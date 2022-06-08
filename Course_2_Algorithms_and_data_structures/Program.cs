@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Course_2_Algorithms_and_data_structures
-{
+{    
     class Program
     {
         static void Main(string[] args)
