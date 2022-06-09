@@ -58,7 +58,7 @@ namespace Course_2_Algorithms_and_data_structures
             Console.WriteLine();
             Console.WriteLine("Количество элементов текущего списка: " + DLL.Count);
         }
-
+        // Метод возвращает количество элементов списка
         public int GetCount()
         {
             DoublyLinkedList<int> DLL = new DoublyLinkedList<int>();
@@ -66,6 +66,8 @@ namespace Course_2_Algorithms_and_data_structures
             Example();
             return DLL.Count;
         }
+
+        // Добавляет элемент в конец списка
         public void AddNode(string val)
         {
             DoublyLinkedList<string> DLL = new DoublyLinkedList<string>();
@@ -79,7 +81,7 @@ namespace Course_2_Algorithms_and_data_structures
                 Console.WriteLine(t);
             }
         }
-
+        // Добавляет элемент в начало списка
         public void AddNodeFirst(string val)
         {
             DoublyLinkedList<string> DLL = new DoublyLinkedList<string>();

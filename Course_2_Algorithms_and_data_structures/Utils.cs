@@ -8,15 +8,11 @@ namespace Course_2_Algorithms_and_data_structures
 {
     public interface ILinkedList
     {
-        void Example();
+        void Example(); // Приводит пример, описывая инициализацию списка и работу с ним на консоли
         int GetCount(); // возвращает количество элементов в списке
         void AddNode(string val); // добавляет новый элемент списка (добавит Джейка)
         void AddNodeFirst(string val);// добавляет новый элемент списка в начало (добавит Джейка)
-        //        void AddNodeAfter(Node node, int value); // добавляет новый элемент
-        //        списка после определённого элемента
-        //void RemoveNode(int index); // удаляет элемент по порядковому номеру
-        //        void RemoveNode(Node node); // удаляет указанный элемент
-        //        Node F
+
 
 
     }
