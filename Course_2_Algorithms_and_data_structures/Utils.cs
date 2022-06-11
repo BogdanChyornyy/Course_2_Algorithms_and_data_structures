@@ -21,7 +21,7 @@ namespace Course_2_Algorithms_and_data_structures
         public static void TaskChoiser()
         {
             Console.WriteLine("Выберите задание...");
-            string[] somearr = { "1 - Простое число.", "2 - Число Фибоначчи.", "3 - Реализация списка." };
+            string[] somearr = { "1 - Простое число.", "2 - Число Фибоначчи.", "3 - Реализация списка.", "4 - Дистанция.", "5 - Дерево." };
 
             for (int i = 0; i < somearr.Length; i++)
             {
@@ -42,10 +42,20 @@ namespace Course_2_Algorithms_and_data_structures
             if (choice == 3)
             {
                 Console.Clear();
-
                 ILinkedList linkedListInt = new LinkedList();
 
                 linkedListInt.Example();                
+            }
+            if (choice == 4)
+            {
+                Console.Clear();
+                Console.WriteLine("Введите количество значений для прогона");
+                int quantity = Convert.ToInt32(Console.ReadLine());
+                Distance.ArrayRefVal(quantity);
+            }
+            if (choice == 5)
+            {
+                BinaryTree.Example();
             }
         }
     }

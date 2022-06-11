@@ -3,37 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
 
-namespace BenchmarkTests
-{
-    public class DistanceClass
-    {
-        public double X = 0;
-        public double Y = 0;        
-    }
-    public struct DistanceStruct
-    {
-        public double X = 0;
-        public double Y = 0;
-    }
-    [MemoryDiagnoser]
+
+namespace Course_2_Algorithms_and_data_structures
+{        
     public class Distance
     {
-        [Benchmark]
-        public void ArrayRefVal1000()
-        {
-            Distance.ArrayRefVal(100);
-        }
-        [Benchmark]
-        public void ArrayRefVal1000000()
-        {
-            Distance.ArrayRefVal(500);
-        }
-
-
-        // Создаем метод, возвращающий расстояние между парой точек каждого типа.
+        // Создаем метод, возвращающий расстояние между парой точек каждого типа
+        // с предустановленными значениями.
         public static void PointDistance()
         {
             var pointOne = new DistanceClass { X = 12.4321, Y = 16.6546 };
@@ -67,6 +44,8 @@ namespace BenchmarkTests
             DistanceClass distanceClass = new DistanceClass();
             DistanceStruct distanceStruct = new DistanceStruct();
 
+            Console.WriteLine("X1 Y1 X2 Y2 Distance");
+
             // Переменные для хранения значений свича.
             double x1 = 0;
             double y1 = 0;
@@ -76,12 +55,13 @@ namespace BenchmarkTests
             double[,] arrayOfPoint = new double[quantity, 5];
             for (int i = 0; i < quantity; i++)
             {
-                Random rndType1 = new Random();
+                
                 for (int j = 0; j < 5; j++)
-                {                    
+                {
                     // Заполнение ссылочным типом.
                     if (i < quantity / 2)
                     {
+                        // Вызов класса рандомайзера.
                         Random rnd = new Random();
 
                         switch (j)
@@ -89,7 +69,7 @@ namespace BenchmarkTests
                             // Заполнение Х1.
                             case 0:
                                 x1 = distanceClass.X = rnd.Next(10, 99);
-                                arrayOfPoint[i, j] = distanceClass.X;                                
+                                arrayOfPoint[i, j] = distanceClass.X;
                                 break;
 
                             // Заполнение Y1.
@@ -99,7 +79,7 @@ namespace BenchmarkTests
                                 break;
 
                             // Заполнение Х2.
-                            case 2:         
+                            case 2:
                                 x2 = distanceClass.X = rnd.Next(10, 99);
                                 arrayOfPoint[i, j] = distanceClass.X;
                                 break;
@@ -112,15 +92,16 @@ namespace BenchmarkTests
 
                             // Заполнение данных о расстоянии.
                             case 4:
-                                var pointTwo = new DistanceClass { X = x1, Y = y1 };
-                                var pointOne = new DistanceClass { X = x2, Y = y2 };
-                                arrayOfPoint[i, j] = PointDistanceRef(pointOne, pointTwo);
+                                var pointTwo = new DistanceClass { X = x1, Y = y1 }; // Координаты точки 1.
+                                var pointOne = new DistanceClass { X = x2, Y = y2 }; // Координаты точки 2.
+                                arrayOfPoint[i, j] = PointDistanceRef(pointOne, pointTwo); // Вызов метода подсчета расстояния.
                                 break;
                         }
                     }
                     // Заполнение значимым типом.
                     if (i >= quantity / 2)
                     {
+                        // Вызов класса рандомайзера.
                         Random rnd = new Random();
 
                         switch (j)
@@ -152,17 +133,17 @@ namespace BenchmarkTests
 
                             // Заполнение данных о расстоянии.
                             case 4:
-                                var pointTwo = new DistanceStruct { X = x1, Y = y1 };
-                                var pointOne = new DistanceStruct { X = x2, Y = y2 };
-                                arrayOfPoint[i, j] = PointDistanceVal(pointOne, pointTwo);
+                                var pointTwo = new DistanceStruct { X = x1, Y = y1 }; // Координаты точки 1.
+                                var pointOne = new DistanceStruct { X = x2, Y = y2 }; // Координаты точки 2.
+                                arrayOfPoint[i, j] = PointDistanceVal(pointOne, pointTwo); // Вызов метода подсчета расстояния.
                                 break;
-                        }                        
+                        }
                     }
                     Console.Write(arrayOfPoint[i, j] + " ");
                 }
                 Console.WriteLine();
             }
-            
+
         }
     }
 }
