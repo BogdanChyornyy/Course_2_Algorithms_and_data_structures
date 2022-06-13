@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Course_2_Algorithms_and_data_structures
-{
+{ 
     internal class BinaryTree
     {
         private string value;
@@ -58,7 +58,7 @@ namespace Course_2_Algorithms_and_data_structures
                     throw new Exception("Искомого узла в дереве нет");
             }
         }
-        // отображение в строку
+        // Отображение в строку.
         public string Display(BinaryTree t)
         {
             string result = "";
@@ -72,7 +72,7 @@ namespace Course_2_Algorithms_and_data_structures
 
             return result;
         }
-        // подсчет
+        // Подсчет.
         private int Recount(BinaryTree t)
         {
             int count = 0;
@@ -87,14 +87,14 @@ namespace Course_2_Algorithms_and_data_structures
 
             return count;
         }
-        // очистка
+        // Очистка.
         public void Clear()
         {
             this.value = null;
             this.left = null;
             this.right = null;
         }
-        // проверка пустоты
+        // Проверка пустоты.
         public bool IsEmpty()
         {
             if (this.value == null)
