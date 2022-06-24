@@ -131,7 +131,7 @@ namespace Course_2_Algorithms_and_data_structures
             //Console.Read();
             string somestring = "";
             bool check = true;
-            Across(t, ref somestring, check, "груша");
+            DeepSearch(t, ref somestring, check, "груша");
         }
         /// <summary>
         /// обход дерева в ширину
@@ -139,7 +139,7 @@ namespace Course_2_Algorithms_and_data_structures
         /// <param name="node"></текущий "элемент дерева".>
         /// <param name="s"></строка, в которой накапливается результат.>
         /// <param name="stopWord"></искомое слово.>            
-        private static void Across(BinaryTree node, ref string s, bool detailed, string stopWord)
+        private static void AcrossSearch(BinaryTree node, ref string s, bool detailed, string stopWord)
         {
             var queue = new Queue<BinaryTree>(); // создать новую очередь
 
@@ -184,6 +184,55 @@ namespace Course_2_Algorithms_and_data_structures
                 }
 
                 queue.Dequeue();
+            }
+            Console.WriteLine(s);
+        }
+
+        /// <summary>
+        /// Обход в глубину.
+        /// </summary>
+        /// <param name="node"><текущий "элемент дерева" (ref  передача по ссылке)>
+        /// <param name="s"><строка, в которой накапливается результат (ref - передача по ссылке)>
+        /// <param name="detailed"></param>
+        /// <param name="stopWord"></param>
+        private static void DeepSearch(BinaryTree node, ref string s, bool detailed, string stopWord)
+        {            
+            if (node != null)
+            {
+                if (detailed)
+                {
+                    s += "    получили значение " + node.value.ToString() + Environment.NewLine;
+                    if (node.value.ToString() == stopWord)
+                    {
+                        return;
+                    }
+                }
+
+                else
+                {
+                    s += node.value.ToString() + " "; // запомнить текущее значение
+                }
+
+                if (node.value.ToString() == stopWord)
+                {
+                    return;
+                }
+
+
+                if (detailed)
+                {
+                    s += "    обходим левое поддерево" + Environment.NewLine;
+                }
+                DeepSearch(node.left, ref s, detailed, stopWord); // обойти левое поддерево
+                if (detailed)
+                {
+                     s += "    обходим правое поддерево" + Environment.NewLine;
+                }                   
+                DeepSearch(node.right, ref s, detailed, stopWord); // обойти правое поддерево
+            }
+            else if (detailed)
+            {
+                 s += "    значение отсутствует - null" + Environment.NewLine;
             }
             Console.WriteLine(s);
         }
