@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface;
 
 
 namespace Course_2_Algorithms_and_data_structures
 {        
-    public class Distance
+    public class Distance : IInterface
     {
+        public string name => "Координаты и расстояние";
+
+        public string description => "Необходимо реализовать программу, которая будет генерировать координаты точек X и Y и вычислять расстояние между ними";
+
+        public void Run()
+        {
+            Console.WriteLine("Введите количество значений для прогона");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            Distance.ArrayRefVal(quantity);
+        }
+
         // Создаем метод, возвращающий расстояние между парой точек каждого типа
         // с предустановленными значениями.
         public static void PointDistance()
@@ -143,7 +155,6 @@ namespace Course_2_Algorithms_and_data_structures
                 }
                 Console.WriteLine();
             }
-
         }
     }
 }

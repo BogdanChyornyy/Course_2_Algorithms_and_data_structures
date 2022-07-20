@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface;
 
 namespace Course_2_Algorithms_and_data_structures
 {
@@ -18,8 +19,24 @@ namespace Course_2_Algorithms_and_data_structures
         public LinkedList<T> Next { get; set; }
     }
 
+    public interface ILinkedList : IInterface
+    {
+        void Example(); // Приводит пример, описывая инициализацию списка и работу с ним на консоли
+        int GetCount(); // возвращает количество элементов в списке
+        void AddNode(string val); // добавляет новый элемент списка (добавит Джейка)
+        void AddNodeFirst(string val);// добавляет новый элемент списка в начало (добавит Джейка)
+    }
+
     public class LinkedList : ILinkedList
     {
+        public string name => "Связный список";
+
+        public string description => "Необходимо реализовать связный список";
+        public void Run()
+        {
+            Example();
+        }
+
         public void Example()
         {
             DoublyLinkedList<string> DLL = new DoublyLinkedList<string>();
@@ -94,6 +111,6 @@ namespace Course_2_Algorithms_and_data_structures
             {
                 Console.WriteLine(t);
             }
-        }
+        }       
     }
 }

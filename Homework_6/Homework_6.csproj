@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Course_2_Algorithms_and_data_structures\Course_2_Algorithms_and_data_structures.csproj" />
     <ProjectReference Include="..\Interface\Interface.csproj" />
   </ItemGroup>
 

@@ -3,11 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface;
 
 namespace Course_2_Algorithms_and_data_structures
 {
-    internal class SimpNum
+    public class SimpNum : IInterface
     {
+        public string name => "Простое число";
+
+        public string description => "Необходимо реализовать функцию, согласно блок-схеме, целью которой является - выяснить, простое число или нет";
+
+        public void Run()
+        {
+            TestCode();
+        }
+
+
+        public static void TestCode()
+        {
+            Console.WriteLine("Реализация проверочного кода...");
+            Console.WriteLine("Выберите сценарий: ");
+            string[] way = { "1 - Интерактив", "2 - Положительный", "3 - отрицательный", "4 - Компьютер выберет число наугад" };
+            for (int i = 0; i < way.Length; i++)
+            {
+                Console.WriteLine(way[i]);
+            }
+            int wayChoice = Convert.ToInt32(Console.ReadLine());
+            switch (wayChoice)
+            {
+                case 1:
+                    Algorythm(Convert.ToInt32(Console.ReadLine()), 0, 2);
+                    break;
+
+                case 2:
+                    Algorythm(11, 0, 2);
+                    break;
+
+                case 3:
+                    Algorythm(6, 0, 2);
+                    break;
+
+                case 4:
+                    Random rnd = new Random();
+
+                    Algorythm(rnd.Next(1, 100), 0, 2);
+                    break;
+            }
+        }
+
         public static void Algorythm(int number, int d, int i)
         {                    
             d = 0;
@@ -53,41 +96,7 @@ namespace Course_2_Algorithms_and_data_structures
                     Console.WriteLine("Число " + number + " - не простое.");
                     RestOrEndApp();
                 }
-            }
-
-            
-        }
-
-        public static void TestCode()
-        {
-            Console.WriteLine("Реализация проверочного кода...");
-            Console.WriteLine("Выберите сценарий: ");
-            string[] way = { "1 - Интерактив", "2 - Положительный", "3 - отрицательный", "4 - Компьютер выберет число наугад" };
-            for (int i = 0; i < way.Length; i++)
-            {
-                Console.WriteLine(way[i]);
-            }
-            int wayChoice = Convert.ToInt32(Console.ReadLine());
-            switch (wayChoice)
-            {
-                case 1:
-                    Algorythm(Convert.ToInt32(Console.ReadLine()), 0, 2);
-                    break;
-
-                case 2:
-                    Algorythm(11, 0, 2);
-                    break;
-
-                case 3:
-                    Algorythm(6, 0, 2);
-                    break;
-
-                case 4:
-                    Random rnd = new Random();                    
-
-                    Algorythm(rnd.Next(1, 100), 0, 2);
-                    break;
-            }
+            }            
         }
 
         public static void RestOrEndApp()

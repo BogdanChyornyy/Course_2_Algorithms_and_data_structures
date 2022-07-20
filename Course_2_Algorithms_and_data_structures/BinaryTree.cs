@@ -3,18 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface;
 
 namespace Course_2_Algorithms_and_data_structures
 {
-    internal class BinaryTree
+    public class BinaryTree : IInterface
     {
+        public string name => "Бинарное дерево";
+
+        public string description => "Необходимо реализовать программу для построения бинарного дерева и поиска вглубину и вширину";
+
+        public void Run()
+        {
+            Example();
+        }
+
         private string value;
         private int count;
         private BinaryTree left;
         private BinaryTree right;
 
         public BinaryTree Node; // экземпляр класса "элемент дерева"
-        public string s;
+        public string s;        
+
         // Операция вставки.
         public void Insert(string value)
         {

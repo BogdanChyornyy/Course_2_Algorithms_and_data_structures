@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface;
 
 namespace Course_2_Algorithms_and_data_structures
 {
-    internal class recursion
+    public class Recursion : IInterface
     {
+        public string name => "Число Фибоначчи";
+
+        public string description => "Необходимо реализовать программу для вычисления числа фибоначии.";
+
+        public void Run()
+        {
+            Launcher();
+        }
+
         /// <summary>
         /// Вычислить число Фиббоначи для заданного числа
         /// </summary>
@@ -50,6 +60,6 @@ namespace Course_2_Algorithms_and_data_structures
             Console.WriteLine($"Число Фиббоначи: {FibV1(n)}");
             Console.WriteLine($"Число Фиббоначи через рекурсию: {FibV2(n)}");
             Console.ReadKey(true);
-        }
+        }        
     }
 }
