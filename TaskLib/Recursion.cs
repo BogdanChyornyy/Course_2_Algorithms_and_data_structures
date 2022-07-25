@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interface;
+using OperatingInterface;
 
-namespace Course_2_Algorithms_and_data_structures
+namespace HomeworkTasks
 {
-    public class Recursion : IInterface
+    public class Recursion : IOperate
     {
         public string name => "Число Фибоначчи";
 

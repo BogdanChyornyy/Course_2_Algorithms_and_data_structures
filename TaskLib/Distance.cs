@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interface;
+using OperatingInterface;
+using UtilsNS;
 
 
-namespace Course_2_Algorithms_and_data_structures
+namespace HomeworkTasks
 {        
-    public class Distance : IInterface
+    public class Distance : IOperate
     {
         public string name => "Координаты и расстояние";
 

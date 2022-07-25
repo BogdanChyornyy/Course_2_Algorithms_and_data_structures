@@ -3,30 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interface;
+using OperatingInterface;
+using UtilsNS;
 
-namespace Course_2_Algorithms_and_data_structures
+
+namespace HomeworkTasks
 {
-    public class LinkedList<T>
-    {
-        public LinkedList(T data)
-        {
-            Data = data;
-        }
-
-        public T Data { get; set; }
-        public LinkedList<T> Previous { get; set; }
-        public LinkedList<T> Next { get; set; }
-    }
-
-    public interface ILinkedList : IInterface
-    {
-        void Example(); // Приводит пример, описывая инициализацию списка и работу с ним на консоли
-        int GetCount(); // возвращает количество элементов в списке
-        void AddNode(string val); // добавляет новый элемент списка (добавит Джейка)
-        void AddNodeFirst(string val);// добавляет новый элемент списка в начало (добавит Джейка)
-    }
-
     public class LinkedList : ILinkedList
     {
         public string name => "Связный список";
