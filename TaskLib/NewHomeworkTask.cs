@@ -4,27 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OperatingInterface;
+using UtilsNS;
 
 namespace HomeworkTasks
 {
     internal class NewHomeworkTask : IOperate
     {
-        public string name => "Пробное задание";
+        public string name => "8 ферзей";
 
-        public string description => "необходимо создать новое дз и увидеть, будет ли оно работать";
+        public string description => "необходимо расположить 8 ферзей на шахматной доске 8х8 так, чтобы ни один из них не атаковал друг друга и найти все возможные варианты расстановок.";
 
-        public void Calculator()
+        static void Example()
         {
-            Console.WriteLine("Введите первое слагаемое: ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите второе слагаемое: ");
-            int b = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ответ: " + (a + b));
+            ChordCorrecting.CreateArrayFirst(0, 0);
         }
 
         public void Run()
         {
-            Calculator();
+            Example();
         }
     }
 }
