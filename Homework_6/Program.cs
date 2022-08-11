@@ -31,31 +31,6 @@ namespace Homework_6
                     lesson.Run();
                 }
             }
-
-            //    if (choice == "Bin")
-            //{
-            //    CreateList.Run(4);
-            //}
-
-
-
-
-
-
-
-
-            //Assembly asm = Assembly.LoadFrom("D:\\Projects\\Course_2_Algorithms_and_data_structures\\TaskLib\\bin\\Debug\\net6.0\\TaskLib.dll");
-
-            //Console.WriteLine(asm.FullName);
-
-            //Type[] types = asm.GetTypes();
-            //int counter = 0;
-            //foreach (Type t in types)
-            //{
-            //    Console.WriteLine(t.Name);
-            //}
-
-
         }
     }
 }

@@ -42,7 +42,6 @@ namespace HomeworkTasks
             }
             return homeWorkList;
         }
-
         public static void Run(int value)
         {
             homeWorkList[value].Run();
