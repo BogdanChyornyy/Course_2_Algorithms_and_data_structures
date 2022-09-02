@@ -8,7 +8,7 @@ using UtilsNS;
 
 namespace HomeworkTasks
 {
-    internal class NewHomeworkTask : IOperate
+    internal class EigthQueensIni : IOperate
     {
         public string name => "8 ферзей";
 

@@ -15,33 +15,42 @@ namespace HomeworkTasks
 
         public void Run()
         {
-            Sort(Convert.ToInt32(Console.ReadLine()));
-        }
-
-        public static void Sort(int quantity)
-        {
-            // Заполняет массив случайными значениями.
+            Console.WriteLine("Введите желаемую длину массива");
+            int quantity = Convert.ToInt32(Console.ReadLine()); // Обозначение длины массива для генерации.
             Random rand = new Random();
             int[] numbers = new int[quantity];
+            for (int i = 0; i < quantity; i++) // Генерация массива.
+            {
+                numbers[i] = rand.Next(0, quantity);
+            }
+            Console.WriteLine("Сгенерированный массив: ");
             for (int i = 0; i < quantity; i++)
             {
-                numbers[i] = rand.Next(0, quantity); ;
+                Console.WriteLine(numbers[i]);
             }
+            Sort(numbers, quantity);
+        }
+        public static void Sort(int[] numbers, int quantity)
+        {
+            var range = new SortedDictionary<int, int>(); // Создание сортированной библиотеки.
 
-            int[] numbersCount = new int[quantity]; // Массив с подсчетом количества значений.
-
-            for (int counter = 0; counter < numbers.Length; counter++)
+            for (int i = 0; i < quantity; i++) // Заполнение библиотекию
             {
-                for (int j = 0; j < numbers.Length; j++)
+                if (range.ContainsKey(numbers[i]))
                 {
-                    if (counter == numbers[j])
-                    {
-                        numbersCount[counter]++;
-                    }
+                    range[numbers[i]]++;
                 }
-                for (int f = 1; f <= numbersCount[counter]; f++)
+                else
                 {
-                    Console.WriteLine(counter);
+                    range.Add(numbers[i], 1);
+                }
+            }
+            Console.WriteLine("Отсортированный массив: ");
+            foreach (var key in range.Keys) // Вывод на экран.
+            {
+                for (int j = 1; j <= range[key]; j++)
+                {
+                    Console.WriteLine(key);
                 }
             }
         }
